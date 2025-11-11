@@ -1,9 +1,9 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/api/books/{everything}",
+      "UpstreamPathTemplate": "/api/books/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "DownstreamPathTemplate": "/api/books/{everything}",
+      "DownstreamPathTemplate": "/api/books/",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -13,9 +13,9 @@
       ]
     },
     {
-      "UpstreamPathTemplate": "/api/users/{everything}",
+      "UpstreamPathTemplate": "/api/users/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "DownstreamPathTemplate": "/api/users/{everything}",
+      "DownstreamPathTemplate": "/api/users/",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
