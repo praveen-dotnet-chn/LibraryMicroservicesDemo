@@ -49,7 +49,7 @@ namespace UserService.Controllers
         {
             var user = _context.Users.FirstOrDefault(u => u.Id == id);
             if (user == null)
-                return NotFound();
+                return NotFound("No User Found!!! Please Enter Correct User ID");
 
             var borrowed = new BorrowedBook { UserId = id, BookId = bookId };
 
@@ -65,7 +65,7 @@ namespace UserService.Controllers
             var user = _context.Users.Include(u => u.BorrowedBooks).FirstOrDefault(u => u.Id == id);
 
             if (user == null)
-                return NotFound();
+                return NotFound("No User Found!!! Please Enter Correct User ID");
 
             var books = new List<BookDto>();
             foreach (var borrowed in user.BorrowedBooks)
