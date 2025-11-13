@@ -11,7 +11,9 @@
           "Port": 7048
         }
       ]
+
     },
+
     {
       "UpstreamPathTemplate": "/api/users/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
@@ -21,8 +23,17 @@
         {
           "Host": "localhost",
           "Port": 7175
+        },
+        {
+          "Host": "localhost",
+          "Port": 7001
+        },
+        {
+          "Host": "localhost",
+          "Port": 7002
         }
-      ]
+      ],
+      "LoadBalancerOptions": { "Type": "LeastConnection" }
     }
   ],
   "GlobalConfiguration": {

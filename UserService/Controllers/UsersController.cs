@@ -23,17 +23,19 @@ namespace UserService.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<object>> GetAllUsers()
         {
-            var users = _context
-                .Users.Include(u => u.BorrowedBooks)
-                .Select(u => new
-                {
-                    u.Id,
-                    u.Name,
-                    BorrowedBookIds = u.BorrowedBooks.Select(bb => bb.BookId).ToList(),
-                })
-                .ToList();
+            //var users = _context
+            //    .Users.Include(u => u.BorrowedBooks)
+            //    .Select(u => new
+            //    {
+            //        u.Id,
+            //        u.Name,
+            //        BorrowedBookIds = u.BorrowedBooks.Select(bb => bb.BookId).ToList(),
+            //    })
+            //    .ToList();
 
-            return Ok(users);
+            //return Ok(users);
+            return Ok(Request.Host);
+
         }
 
         [HttpPost]
